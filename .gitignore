@@ -1,0 +1,8 @@
+.ipynb_checkpoints
+images
+raw-data
+notebooks
+test_data.npy
+train_data.npy
+tfmodels
+tfcheckpoints
