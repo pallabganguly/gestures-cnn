@@ -1,7 +1,12 @@
 .ipynb_checkpoints
 images
 raw-data
-notebooks
+notebooks/log
+notebooks/.ipynb_checkpoints
+notebooks/CNN-Keras.ipynb
+notebooks/img_transform_NB.ipynb
+notebooks/test_data.npy
+notebooks/train_data.npy
 test_data.npy
 train_data.npy
 tfmodels
