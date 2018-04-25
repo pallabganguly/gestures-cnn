@@ -20,7 +20,7 @@ MODEL_NAME = 'gesture-{}-{}.model'.format(LR, '6_CNN-basic') # just so we rememb
 
 def label_img(img):
     word_label = img[0]
-    # conversion to one-hot array [index,v-shape,fist,terminal]
+    # conversion to one-hot array [index,v-shape,fist,thumb]
    
     if word_label == 'i': return [1,0,0,0]                            
     elif word_label == 'v': return [0,1,0,0]
@@ -62,21 +62,7 @@ from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 
 import tensorflow as tf
-# train=[]
-# test=[]
-# train = train_data[:-1500]
-# test = train_data[-1500:]
 
-# X = np.array([i[0] for i in train]).reshape(-1,IMG_SIZE,IMG_SIZE,1)
-# Y = [i1[1] for i1 in train]
-
-# test_x = np.array([i2[0] for i2 in test]).reshape(-1,IMG_SIZE,IMG_SIZE,1)
-# test_y = [i3[1] for i3 in test]
-
-# model.fit({'input': X}, {'targets': Y}, n_epoch=5, validation_set=({'input': test_x}, {'targets': test_y}), 
-#     snapshot_step=50, show_metric=True, run_id=MODEL_NAME)
-
-# #model.save(MODEL_NAME)
 train=[]
 test=[]
 train = train_data[1000:4000]

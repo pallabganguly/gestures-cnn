@@ -3,14 +3,12 @@ import matplotlib.pyplot as plt
 #test_data = process_test_data()
 # if i already have some saved:
 test_data = np.load('test_data.npy')
-show=20 # number of images to be shown
-col=4 # no of columns to be displayed
+show = 20 # number of images to be shown
+col = 4 # no of columns to be displayed
 fig=plt.figure()
 labelss = []
 predics = []
 for num,data in enumerate(test_data[:show]):
-    #[index,v-shape,fist,terminal]
-    
     img_num = data[1]
     img_data = data[0]
     if img_num == "i":
@@ -25,7 +23,7 @@ for num,data in enumerate(test_data[:show]):
     y = fig.add_subplot((show/col),col,num+1)
     orig = img_data
     data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
-    #model_out = model.predict([data])[0]
+    # model_out = model.predict([data])[0]
     model_out = (model.predict([data])[0]).round()
     if np.array_equal((model_out),np.array([1.,0.,0.,0.])):
         str_label='index'
@@ -50,5 +48,3 @@ plt.show()
 from sklearn.metrics import classification_report
 
 print(classification_report(labelss, predics))
-
-#print('Precision of the Model is '+str(precision*100) + ' %')
