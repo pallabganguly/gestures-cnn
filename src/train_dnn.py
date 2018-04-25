@@ -54,7 +54,11 @@ def process_test_data():
 
 #train_data = create_train_data()
 # If i have already created the dataset ,i will just load it :
-train_data = np.load('train_data.npy')
+try:
+    test_data = np.load('test_data.npy')
+except (FileNotFoundError):
+    test_data = process_test_data()
+    
 
 import tflearn
 from tflearn.layers.conv import conv_2d, max_pool_2d
