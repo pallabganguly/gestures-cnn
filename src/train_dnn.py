@@ -147,20 +147,4 @@ with tf.device('/gpu:0'):
         snapshot_step=50, show_metric=True, run_id=MODEL_NAME)
 
 #model.save("/home/pallab/gestures-cnn/tfmodels/"+MODEL_NAME)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 model.save("C:/Users/SAURADIP/Desktop/cnn/model/"+MODEL_NAME)
