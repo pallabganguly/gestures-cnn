@@ -5,6 +5,8 @@ Source code for Under Graduate Project, on recogntition and classification of st
 
 
 ## How to install:
+It is highly recommended to crate a virtual environment with python3 before proceeding with the installation
+* Manually install OpenCV 3.1.0
 * git clone https://github.com/pallabganguly/gestures-cnn.git
 * cd gestures-cnn/
 * pip install -r requirements.txt
