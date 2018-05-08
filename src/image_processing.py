@@ -20,7 +20,7 @@ gestures = ["index", "fist", "thumb", "vsign"]
 for gesture in gestures:
     os.chdir(PATH+gesture)
     c = 0
-    for image in os.listdir(".")[:5]:
+    for image in os.listdir("."):
         img = cv2.imread(image)
         # crop = img[120:840, 0:720]
         crop = img[150:870, 0:720]
