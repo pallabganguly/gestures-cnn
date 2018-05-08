@@ -13,6 +13,7 @@ import numpy as np
 
 # This is the path from root directory to this project
 PATH = "/home/pallab/gestures-cnn/raw-data/"
+IMG_DIR = "/home/pallab/gestures-cnn/images/orig/"
 # PATH = "/home/pallab/Desktop/"
 print("Processing files ....")
 k = 0
@@ -32,8 +33,8 @@ for gesture in gestures:
         dilated = cv2.dilate(erosion,None,iterations = 1)
         median = cv2.medianBlur(dilated, 7)
         # res = cv2.resize(median, (30, 30))
-        # filename = "/home/pallab/gestures-cnn/images/orig/"+str(gesture[0])+str(c)+".jpg" # changed here
-        filename = "/home/pallab/Desktop/orig/"+str(gesture[0])+str(c)+".jpg"
+        filename = IMG_DIR + str(gesture[0])+str(c)+".jpg" # changed here
+        # filename = "/home/pallab/Desktop/orig/"+str(gesture[0])+str(c)+".jpg"
         # print(c)
         cv2.imwrite(filename, median)
         c += 1
