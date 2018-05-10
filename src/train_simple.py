@@ -103,7 +103,7 @@ test_y = [i3[1] for i3 in test]
 model.fit(
     {'input': X}, 
     {'targets': Y}, 
-    n_epoch=10, 
+    n_epoch=20, 
     validation_set=({'input': test_x}, {'targets': test_y}), 
     snapshot_step=50, 
     show_metric=True, 
