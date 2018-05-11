@@ -82,6 +82,7 @@ while count != 1001:
     median = cv2.resize(median, (IMG_SIZE, IMG_SIZE))
     data = median.reshape(IMG_SIZE,IMG_SIZE,1)
     model_out = (model.predict([data])[0])
+    probabilities = model_out
     prediction = (model_out == model_out.max(axis=0, keepdims=True)).astype(int)
     label = ""
     if np.array_equal((prediction),np.array([1.,0.,0.,0.,0.])):
@@ -95,10 +96,16 @@ while count != 1001:
     elif np.array_equal((prediction) , np.array([0.,0.,0.,0.,1.])): 
         label = "NOGS"
 
+    
+    gests = ["INDX", "VSHP", "FIST", "THMB", "NOGS"]
+    plt.barh(gests, probabilities)
+    plt.savefig("foobar.jpg")
+    plot = cv2.imread("foobar.jpg")
     cv2.putText(frame, label, (200,200), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
     cv2.imshow('cropped', frame)
     cv2.imshow('mask', median)
-    # #
+    cv2.imshow("Scores", plot)
+    os.remove("foobar.jpg")
     # write_img = cv2.resize(median, (50,50))
     # cv2.imwrite('images_data/peace/'+str(count)+'.jpg',write_img)
     # print count

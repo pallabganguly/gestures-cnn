@@ -10,4 +10,5 @@ It is highly recommended to crate a virtual environment with python3 before proc
 * git clone https://github.com/pallabganguly/gestures-cnn.git
 * cd gestures-cnn/
 * pip install -r requirements.txt
+* python finalgest.py
 ### Note: This repository contains original research work done by the author. Please include proper citations when using any of the results obtained from this repository.
