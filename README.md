@@ -11,4 +11,8 @@ It is highly recommended to crate a virtual environment with python3 before proc
 * cd gestures-cnn/
 * pip install -r requirements.txt
 * python finalgest.py
+Download the trained model from:
+Keep the model in a directory called tfmodels, which is in a directory separate from src.
+Run python finalgest.py
+
 ### Note: This repository contains original research work done by the author. Please include proper citations when using any of the results obtained from this repository.
