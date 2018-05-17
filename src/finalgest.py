@@ -99,13 +99,13 @@ while count != 1001:
     
     gests = ["INDX", "VSHP", "FIST", "THMB", "NOGS"]
     plt.barh(gests, probabilities)
-    plt.savefig("foobar.jpg")
-    plot = cv2.imread("foobar.jpg")
+    # plt.savefig("foobar.jpg")
+    # plot = cv2.imread("foobar.jpg")
     cv2.putText(frame, label, (200,200), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
     cv2.imshow('cropped', frame)
     cv2.imshow('mask', median)
-    cv2.imshow("Scores", plot)
-    os.remove("foobar.jpg")
+    # cv2.imshow("Scores", plot)
+    # os.remove("foobar.jpg")
     # write_img = cv2.resize(median, (50,50))
     # cv2.imwrite('images_data/peace/'+str(count)+'.jpg',write_img)
     # print count

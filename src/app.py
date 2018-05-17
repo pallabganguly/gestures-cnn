@@ -57,18 +57,19 @@ def skinMask(frame, x0, y0, width, height ):
     return res
 
 def soft(num):
-    if num==1:
-        count=2
-        while count>0:
-                #p = subprocess.Popen(["C:/Program Files (x86)/VideoLAN/VLC/vlc.exe","file:///C:/Users/SAURADIP/Desktop/projvid/peace.mp4"])
-                count=count-1
-                print(count)
-    elif num==2:
-        print(2)
-    elif num==3:
-        print(3)
-    elif num==4:
-        print(4)
+    pass
+    # if num==1:
+    #     count=2
+    #     while count>0:
+    #             #p = subprocess.Popen(["C:/Program Files (x86)/VideoLAN/VLC/vlc.exe","file:///C:/Users/SAURADIP/Desktop/projvid/peace.mp4"])
+    #             count=count-1
+    #             print(count)
+    # elif num==2:
+    #     print(2)
+    # elif num==3:
+    #     print(3)
+    # elif num==4:
+    #     print(4)
 
 
 
@@ -185,7 +186,7 @@ while count != 1001:
     #cv2.rectangle(frame, (400,400), (200,200), (0,255,0),0)
     crop_img = frame[200:400, 200:400]
     value = (33, 33)
-    roi=skinMask(frame,400,200,200,200)
+    roi=skinMask(frame,400,200,100,100)
     cv2.imshow('win',roi)
     # #hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
     # #cv2.imshow('hsv',hsv)
@@ -251,20 +252,20 @@ while count != 1001:
 
    # plt.set_xticklabels(np.around(np.multiply(probabilities,100),decimals=2), minor=False)
     plt.xticks(np.arange(0, 1, step=0.2))
-    plt.savefig("foobar.jpg")
+    # plt.savefig("foobar.jpg")
     plt.title('Gesture Recognition')
     plt.xlabel('Probabilities of Detection')
     plt.ylabel('Gestures')
     plt.figure(figsize=(14,7))
-    plot = cv2.imread("foobar.jpg")
+    # plot = cv2.imread("foobar.jpg")
     cv2.putText(frame, label, (400,200), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
     cv2.imshow('cropped', frame)
     cv2.imshow('mask', median)
-    cv2.imshow("Scores", plot)
-    os.remove("foobar.jpg")
-    write_img = cv2.resize(median, (50,50))
-    cv2.imwrite('images_data/peace/'+str(count)+'.jpg',write_img)
-    print(count)
+    # cv2.imshow("Scores", plot)
+    # os.remove("foobar.jpg")
+    # write_img = cv2.resize(median, (50,50))
+    # cv2.imwrite('images_data/peace/'+str(count)+'.jpg',write_img)
+    # print(count)
     count += 1
     k = cv2.waitKey(5) & 0xFF
     if k == 27:
