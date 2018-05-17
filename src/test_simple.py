@@ -67,12 +67,12 @@ try:
 except (FileNotFoundError):
     test_data = process_test_data()
 
-show = 100 # number of images to be shown
-col = 10 # no of columns to be displayed
+show = 50 # number of images to be shown
+col = 5 # no of columns to be displayed
 fig = plt.figure()
 labelss = []
 predics = []
-
+shuffle(test_data)
 for num,data in enumerate(test_data[:show]):
     img_num = data[1]
     img_data = data[0]
@@ -117,7 +117,12 @@ for num,data in enumerate(test_data[:show]):
     y.axes.get_yaxis().set_visible(False)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 from sklearn.metrics import classification_report
 print(classification_report(labelss, predics))
+labelss, predics = np.array(labelss), np.array(predics)
+x = 0
+for v in labelss==predics:
+    if v: x+=1
+print("Accuracy =", x/show)
