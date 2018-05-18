@@ -1,8 +1,7 @@
 # Gesture Classification using CNN
 ## Still under development
 ## Repository of code and results for gesture classification using CNN for UG Project
-Source code for Under Graduate Project, on recogntition and classification of static gestures using Convolutional Neural Networks. Still under develeopment, so code may not run as expected, or files may be missing
-
+Source code for Under Graduate Project, on recogntition and classification of static gestures using Convolutional Neural Networks.
 
 ## How to install:
 It is highly recommended to crate a virtual environment with python3 before proceeding with the installation
