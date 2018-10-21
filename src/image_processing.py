@@ -12,8 +12,8 @@ import cv2
 import numpy as np
 
 # This is the path from root directory to this project
-PATH = "/home/pallab/gestures-cnn/raw-data/"
-IMG_DIR = "/home/pallab/gestures-cnn/images/orig/"
+# PATH = "/home/pallab/gestures-cnn/raw-data/"
+PATH = "/home/pallab/gestures-cnn/images/orig/"
 # PATH = "/home/pallab/Desktop/"
 print("Processing files ....")
 k = 0

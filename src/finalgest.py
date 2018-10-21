@@ -14,6 +14,9 @@ from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.normalization import local_response_normalization
 from tflearn.layers.estimator import regression
 
+import webbrowser
+import pyautogui as gui
+
 TEST_DIR = "/home/pallab/Desktop/test"
 IMG_SIZE = 64
 LR = 1e-3
@@ -65,6 +68,7 @@ model.load("/home/pallab/gestures-cnn/tfmodels/"+MODEL_NAME)
 cap = cv2.VideoCapture(0)
 count = 1
 font = cv2.FONT_HERSHEY_DUPLEX
+flag = 0
 while count != 1001:
     ret, frame = cap.read()
     cv2.rectangle(frame, (300,300), (200,200), (0,255,0),0)
@@ -84,19 +88,23 @@ while count != 1001:
     model_out = (model.predict([data])[0])
     probabilities = model_out
     prediction = (model_out == model_out.max(axis=0, keepdims=True)).astype(int)
-    label = ""
+    label, action = "", 0
     if np.array_equal((prediction),np.array([1.,0.,0.,0.,0.])):
         label = "INDX"
+        action = 0
     elif np.array_equal((prediction),np.array([0.,1.,0.,0.,0.]) ): 
         label = "VSHP"
+        action = 1
     elif np.array_equal((prediction) , np.array([0.,0.,1.,0.,0.])): 
         label = "FIST"
+        action = 2
     elif np.array_equal((prediction) , np.array([0.,0.,0.,1.,0.])): 
         label = "THMB"
+        action = 3
     elif np.array_equal((prediction) , np.array([0.,0.,0.,0.,1.])): 
         label = "NOGS"
+        action = 4
 
-    
     gests = ["INDX", "VSHP", "FIST", "THMB", "NOGS"]
     plt.barh(gests, probabilities)
     # plt.savefig("foobar.jpg")
@@ -104,6 +112,15 @@ while count != 1001:
     cv2.putText(frame, label, (200,200), font, 0.5, (0, 255, 0), 1, cv2.LINE_AA)
     cv2.imshow('cropped', frame)
     cv2.imshow('mask', median)
+    # if action == 0:
+    #     if flag == 0:
+    #         flag = 1
+    #         webbrowser.open("http://apps.thecodepost.org/trex/trex.html", new=2)
+    #     # os.system("vlc-ctrl play -p /home/pallab/Music/Another-brick-in-the-wall-PT-2.mp3")
+    # elif action == 1 and flag == 1:
+    #     gui.press("space")
+        # os.system("vlc-ctrl pause")
+    
     # cv2.imshow("Scores", plot)
     # os.remove("foobar.jpg")
     # write_img = cv2.resize(median, (50,50))
