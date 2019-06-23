@@ -148,21 +148,6 @@ with tf.device('/gpu:0'):
 
 #model.save("/home/pallab/gestures-cnn/tfmodels/"+MODEL_NAME)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 model.save("C:/Users/SAURADIP/Desktop/cnn/model/"+MODEL_NAME)
 # import matplotlib.pyplot as plt
 

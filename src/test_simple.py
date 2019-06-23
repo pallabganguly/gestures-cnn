@@ -14,6 +14,10 @@ from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.normalization import local_response_normalization
 from tflearn.layers.estimator import regression
 
+
+"""
+TEST DATA FOLDER GOES HERE, PLS REPLACE AS PER YOUR SYSTEM
+"""
 TEST_DIR = "/home/pallab/Desktop/test"
 IMG_SIZE = 64
 LR = 1e-3
