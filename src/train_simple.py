@@ -13,6 +13,9 @@ from tflearn.layers.normalization import local_response_normalization
 from tflearn.layers.estimator import regression
 
 # TRAIN_DIR = '/home/pallab/gestures-cnn/images/manual'
+"""
+TRAINING DATA FOLDER GOES HERE, PLS REPLACE AS PER YOUR SYSTEM
+"""
 TRAIN_DIR = '/home/pallab/Desktop/orig'
 
 IMG_SIZE = 64 # Resizing and reshaping 
